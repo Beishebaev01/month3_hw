@@ -11,7 +11,6 @@ def main(page: ft.Page):
 
     history_text = ft.Text("History", style="bodyMedium")
 
-
     def on_button_click(_):
         name = name_input.value.strip()
         if name:
@@ -36,7 +35,6 @@ def main(page: ft.Page):
 
 
     name_input = ft.TextField(label="Enter your name:", autofocus=True, on_submit=on_button_click)
-
 
     def clear_history(_):
         greeting_history.clear()
