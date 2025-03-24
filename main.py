@@ -20,12 +20,16 @@ def main(page: ft.Page):
             time = dt.datetime.now().strftime("%H:%M:%S")
             if time > "06:00:00" and time < "12:00:00":
                 greeting_text.value = f"Good morning, {name}!"
+                greeting_text.color = ft.colors.YELLOW
             elif time > "12:00:00" and time < "18:00:00":
                 greeting_text.value = f"Good afternoon, {name}!"
+                greeting_text.color = ft.colors.ORANGE
             elif time > "18:00:00" and time < "23:59:59":
                 greeting_text.value = f"Good evening, {name}!"
+                greeting_text.color = ft.colors.RED
             else:
                 greeting_text.value = f"Good night, {name}!"
+                greeting_text.color = ft.colors.BLUE
             greeting_history.append(f"{time} - {name}")
             history_text.value = "History: " + "\n".join(greeting_history)
         else:
@@ -66,4 +70,4 @@ def main(page: ft.Page):
              )
     
 
-ft.app(target=main, view=ft.WEB_BROWSER)
+ft.app(target=main)
